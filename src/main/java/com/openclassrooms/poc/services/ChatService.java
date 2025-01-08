@@ -8,6 +8,7 @@ import com.openclassrooms.poc.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -38,6 +39,10 @@ public class ChatService {
             // Gérer le cas où l'utilisateur n'existe pas
             throw new RuntimeException("Utilisateur non trouvé");
         }
+    }
+
+    public List<ChatMessage> getMessages() {
+        return chatRepository.findAll();
     }
 
 }
